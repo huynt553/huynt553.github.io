@@ -1,1 +1,42 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>URL Facebook Likes - Javascript and Graph API</title>
+
+<!-- Include Required Prerequisites -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="fb-like-div">test</div>
+
+<script type="text/javascript">
+
+$(function(){
+
+	var url = 'http://www.texashillcountry.com';
+	var apiUrl = 'https://graph.facebook.com/?ids='+url;
+
+ 	$.ajax({url: apiUrl, success: function(result){
+
+        $.each( result, function( key, val ) {
+
+        	console.log(key + ' - ' + val['share']['share_count']);
+
+        	var shareCount = val['share']['share_count'];
+        	
+        	$("#fb-like-div").html(shareCount);
+
+  		});
+
+    }});
+
+});
+
+</script>
+
+</body>
+</html>
