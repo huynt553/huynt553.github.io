@@ -1,15 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4978947189184531",
-    enable_page_level_ads: true
-  });
-</script>
 
-	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive product landing page.">
@@ -56,8 +48,31 @@
 
 		    $('#myModal').appendTo("body");
 		    var count = $("[type='checkbox']:checked").length;
-		    $('#totalText').text("Your score is " + count + " points!");
-		    $('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    console.log("count: " + count);
+		    if(90 <= count && count <= 100) {
+		    	$('#totalText').html("Your score is " + count + " points! You are an <b>Asian Tourist</b>! You are the epitome of asian stereotypes. The peace sign is a must in every photo. You've probably lived in Asia most of your life. You feel more comfortable with asian culture than you do American culture. People look to you for the most immersive and unique asian experiences.");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
+		    else if(80 <= count && count <= 89) {
+		    	$('#totalText').html("Your score is " + count + " points! You are <b>Fresh off the boat</b>! You lived in Asia for a bit but moved over in your teen years! You're getting more used to American culture but still prefer to do things like back in your home country. You still speak your native tongue with most of your friends! If you're rich, you definitely own something from supreme. Spicy foods don't phase you at all here.");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
+		    else if(60 <= count && count <= 79) {
+		    	$('#totalText').html("Your score is " + count + " points! You are a <b>First Generation Child</b>. Your parents were born in Asia but you were born here! There might be a language barrier at times but that doesn't stop you from getting along with your parents. You were born into American social norms but still appreciate your culture (especially more as you got older). You hated going to your native tongue's language school as a kid, but now you wish you knew more. ");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
+		    else if(40 <= count && count <= 59) {
+		    	$('#totalText').html("Your score is " + count + " points! You are <b>Slightly Whitewashed</b>. Your parents have lived in the US for awhile now, their accent is still a bit noticable but nowhere near heavy. Taking off shoes before you enter the house is OPTIONAL for you. Your parents are way more laid back and let you go to dances, sleepover, etc. Your friend group is diverse and not just all asians. You still appreciate your asian culture, you just don't relate to it as much as others.");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
+		    else if(25 <= count && count <= 39) {
+		    	$('#totalText').html("Your score is " + count + " points! You are a <b>Banana</b>. Yellow on the outside, white on the inside. Your parents may have been born here and speak perfect english. You don't live in an area populated with asians and find it weird when there are so many around. Why would you ever handwash dishes when you can just use the dishwasher? You can maaaybe say hi in your native tongue but with terrible pronunciation. ");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
+		    else if(0 <= count && count <= 24) {
+		    	$('#totalText').html("Your score is " + count + " points! You may not be asian but that's ok, we're all inclusive here! Just remember to take off your DAMN SHOES WHEN YOU ENTER THE HOUSE.");
+		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
+		    }
 		});
 	});
 </script>
@@ -154,7 +169,7 @@
                     </li><li> <input type="checkbox" id="36"> Must have tea with dim sum?
                     </li><li> <input type="checkbox" id="37"> Parents insist on getting to airport unnecessarily early?
                     </li><li> <input type="checkbox" id="38"> Punished with wooden spoon, belt, or sandal?
-                    </li><li> <input type="checkbox" id="39"> Been to a rave?
+                    </li><li> <input type="checkbox" id="39"> Cosplayed?
                     </li><li> <input type="checkbox" id="40"> Someone in family worn jade jewelry?
                     </li><li> <input type="checkbox" id="41"> Use dishwasher as drying rack?
                     </li><li> <input type="checkbox" id="42"> B Letter Grades meant failure?
@@ -180,7 +195,7 @@
                     </li><li> <input type="checkbox" id="62"> Parents are slightly racist?
                     </li><li> <input type="checkbox" id="63"> Parents have over 5 siblings?
                     </li><li> <input type="checkbox" id="64"> Parents don't let you sleepover?
-                    </li><li> <input type="checkbox" id="65"> Look younger then you actually are?
+                    </li><li> <input type="checkbox" id="65"> Look younger than you actually are?
                     </li><li> <input type="checkbox" id="66"> Played DOTA?
                     </li><li> <input type="checkbox" id="67"> Can asian squat?
                     </li><li> <input type="checkbox" id="68"> Parents cut fruit for you (to show you love)?
@@ -192,7 +207,7 @@
                     </li><li> <input type="checkbox" id="74"> Had to massage parents before?
                     </li><li> <input type="checkbox" id="75"> Been asked if you eat dog?
                     </li><li> <input type="checkbox" id="76"> Actually eaten dog?
-                    </li><li> <input type="checkbox" id="77"> Had your name mispronounced by a teacher?
+                    </li><li> <input type="checkbox" id="77"> Had your first or last name mispronounced by a teacher?
                     </li><li> <input type="checkbox" id="78"> Parents insist you only eat seafood at buffets?
                     </li><li> <input type="checkbox" id="79"> Vaped / Juuled before?
                     </li><li> <input type="checkbox" id="80"> Will never be good enough in parents eyes?
