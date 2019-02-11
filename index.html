@@ -46,6 +46,47 @@
         <!--<![endif]-->
 
 <script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId            : '288791511760267',
+	      autoLogAppEvents : true,
+	      xfbml            : true,
+	      version          : 'v3.2'
+	    });
+	  };
+
+	    //Function displays the Feed Dialog
+	    function LaunchFeedDialog() {
+	     
+	    //Create an object with the below properties.
+		//There are a lot more parameters than what I have written below. Will explain each one of them in coming posts.
+	        var obj = {
+	            method: 'feed',
+	            link: 'www.msguy.com',
+	            picture: 'http://fbrell.com/f8.jpg',
+	            name: 'A Title for Feed Dialog',
+	            caption: 'Some Caption for the URL',
+	            description: 'A description for the URL which is to be displayed'
+	        };
+
+	        //Calling the Facebook API : Important
+	        FB.ui(obj, callback);
+	    }
+
+        function callback(response) {
+            //Do anything you want here :)
+            //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+            //alert(response['post_id']); Some diagnostics lol :)
+        }
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+
 	$(document).ready(function() {
 		var itemList = [];
 
@@ -57,6 +98,10 @@
 		function getRndInteger(min, max) {
 		  return Math.floor(Math.random() * (max - min)) + min;
 		}
+
+		$('#fbShare').click(function(){
+			LaunchFeedDialog();
+		});
 
 		$('#calcBtn').click(function(){
 			// We will calculate the random number based off the user's points, but for now testing purposes use between 90 and 94
@@ -107,8 +152,6 @@
 
 </head>
 <body>
-
-
 
 
 
@@ -331,6 +374,7 @@
         <div class="modal-body">
           <p id="imgSection"></p>
           <p id="totalText"></p>
+          <button class="pure-button pure-button-primary" id="fbShare">Share to Facebook</button>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
