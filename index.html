@@ -103,6 +103,10 @@
 			LaunchFeedDialog();
 		});
 
+		$('#clrBoxes').click(function(){
+			$('input[type=checkbox]').prop('checked',false);
+		})
+
 		$('#calcBtn').click(function(){
 			// We will calculate the random number based off the user's points, but for now testing purposes use between 90 and 94
 			var photoID = getRndInteger(90, 95);
