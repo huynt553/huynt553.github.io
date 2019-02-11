@@ -84,8 +84,11 @@
 		    	$('#imgSection').html("<img width='50%' src='img/" + photoID + ".jpg'>")
 		    }
 
-		    // Refresh amazon ad after calc
-		    $('#amazonAd').load(document.URL +  ' #amazonAd');
+			jQuery.ajax({ 
+			     url: "customer.html", dataType: "html" 
+			}).done(function( responseHtml ) {
+			     $("#amazonDiv").html(responseHtml);
+			});
 		});
 	});
 </script>
@@ -163,7 +166,7 @@
                     </li><li> <input type="checkbox" id="17"> Like Allie Wong, Hasan Minaj, Aziz Anzari?
                     </li><li> <input type="checkbox" id="18"> Followed Wong Fu Productions, Ryan Higa, or KevJumba?
                     </li><li> <input type="checkbox" id="19"> Have green tea / red bean snacks at home?
-                    </li><li> <input type="checkbox" id="20"> Favorite holiday is Lunar New Year?
+                    </li><li> <input type="checkbox" id="20"> Parents use tiger balm or <a target="_blank" href="https://www.amazon.com/EAGLE-BRAND-MEDICATED-OIL-24ML/dp/B001HYO65S/ref=as_sl_pc_tf_til?tag=huynt5530e-20&linkCode=w00&linkId=65c77d7a9e185b26cdddf94176510b57&creativeASIN=B001HYO65S">this</a> for every sickness?
                     </li><li> <input type="checkbox" id="21"> Currently have Hennessy at the house?
                     </li><li> <input type="checkbox" id="22"> Listens to K-POP?
                     </li><li> <input type="checkbox" id="23"> Asian glow?
@@ -201,7 +204,7 @@
                     </li><li> <input type="checkbox" id="55"> Never had the sex talk with parents?
                     </li><li> <input type="checkbox" id="56"> Crazy Rich Asians made you emotional?
                     </li><li> <input type="checkbox" id="57"> Have one of those fuzzy asian blankets?
-                    </li><li> <input type="checkbox" id="58"> Have tiger balm in your house?
+                    </li><li> <input type="checkbox" id="58"> Red envelope hype at New Years?
                     </li><li> <input type="checkbox" id="59"> Played DDR?
                     </li><li> <input type="checkbox" id="60"> Taken pictures in a photobooth at the mall?
                     </li><li> <input type="checkbox" id="61"> Parents tell stories from back in their country?
