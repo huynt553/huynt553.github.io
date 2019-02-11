@@ -54,22 +54,6 @@
 			itemList.push($(this).attr('id'));
 		}); */
 
-		var categoryID = getRndInteger(1,4);
-		var categoryTitle = '';
-		var categorySearch = '';
-
-		switch(categoryID) {
-			case 1:
-				categoryTitle = 'League of Legends';
-				categorySearch = 'league of legends accessories';
-			case 2:
-				categoryTitle = 'Supreme';
-				categorySearch = 'supreme accessories';
-			case 3:
-				categoryTitle = 'KPOP';
-				categorySearch = 'bts big bang';
-		}
-
 		function getRndInteger(min, max) {
 		  return Math.floor(Math.random() * (max - min)) + min;
 		}
@@ -358,6 +342,26 @@
 
     <div id="amazonAd">
 		<script type="text/javascript">
+		var categoryID = getRndInteger(1,4);
+		var categoryTitle = '';
+		var categorySearch = '';
+
+		switch(categoryID) {
+			case 1:
+				categoryTitle = 'League of Legends';
+				categorySearch = 'league of legends accessories';
+			case 2:
+				categoryTitle = 'Supreme';
+				categorySearch = 'supreme accessories';
+			case 3:
+				categoryTitle = 'KPOP';
+				categorySearch = 'bts big bang';
+		}
+
+		function getRndInteger(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+
 		amzn_assoc_placement = "adunit0";
 		amzn_assoc_search_bar = "true";
 		amzn_assoc_tracking_id = "huynt5530e-20";
