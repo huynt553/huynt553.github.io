@@ -15,9 +15,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How sterotypically asian are you?">
-	<meta property="og:title" content="Asian Purity Test">
+	<meta property="og:title" content="The ExaminAsian">
 	<meta property="og:image" content="https://huynt553.github.io/img/92.jpg">
-	<meta name="og:description" content="Eat chips with chopsticks? Remote control still have plastic on it? How asian are you REALLY?">
+	<meta name="og:description" content="You've taken the SAT, ACT">
     <title>Asian Purity Test</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,6 +47,53 @@
         <!--[if gt IE 8]><!-->
             <link rel="stylesheet" href="css/layouts/marketing.css">
         <!--<![endif]-->
+<style>
+	/* The snackbar - position it at the bottom and in the middle of the screen */
+	#snackbar {
+	  visibility: hidden; /* Hidden by default. Visible on click */
+	  min-width: 250px; /* Set a default minimum width */
+	  margin-left: -125px; /* Divide value of min-width by 2 */
+	  background-color: #333; /* Black background color */
+	  color: #fff; /* White text color */
+	  text-align: center; /* Centered text */
+	  border-radius: 2px; /* Rounded borders */
+	  padding: 16px; /* Padding */
+	  position: fixed; /* Sit on top of the screen */
+	  z-index: 1; /* Add a z-index if needed */
+	  left: 50%; /* Center the snackbar */
+	  bottom: 30px; /* 30px from the bottom */
+	}
+
+	/* Show the snackbar when clicking on a button (class added with JavaScript) */
+	#snackbar.show {
+	  visibility: visible; /* Show the snackbar */
+	  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+	  However, delay the fade out process for 2.5 seconds */
+	  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	}
+
+	/* Animations to fade the snackbar in and out */
+	@-webkit-keyframes fadein {
+	  from {bottom: 0; opacity: 0;} 
+	  to {bottom: 30px; opacity: 1;}
+	}
+
+	@keyframes fadein {
+	  from {bottom: 0; opacity: 0;}
+	  to {bottom: 30px; opacity: 1;}
+	}
+
+	@-webkit-keyframes fadeout {
+	  from {bottom: 30px; opacity: 1;} 
+	  to {bottom: 0; opacity: 0;}
+	}
+
+	@keyframes fadeout {
+	  from {bottom: 30px; opacity: 1;}
+	  to {bottom: 0; opacity: 0;}
+	}
+</style>
 
 <script>
 	  window.fbAsyncInit = function() {
@@ -101,6 +148,26 @@
 
 		$('#fbShare').click(function(){
 			LaunchFeedDialog();
+		});
+
+		$('#copyLink').click(function(){
+			var dummy = document.createElement('input'),
+			    text = window.location.href;
+
+			document.body.appendChild(dummy);
+			dummy.value = 'https://huynt553.github.io/';
+			dummy.select();
+			document.execCommand('copy');
+			document.body.removeChild(dummy);
+
+			// Trigger the copy toast
+		    var x = document.getElementById("snackbar");
+
+		    // Add the "show" class to DIV
+		    x.className = "show";
+
+		    // After 3 seconds, remove the show class from DIV
+		    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 		});
 
 		$('#clrBoxes').click(function(){
@@ -194,106 +261,106 @@
         <div class="pure-g">
 			<div id="list" class="double">
                 <ol>
-                    <li> <input type="checkbox" id="1"> STEM Major (Science, Technology, Engineering, or Math)?
-                    </li><li> <input type="checkbox" id="2"> Play an instrument?
-                    </li><li> <input type="checkbox" id="3"> Seen an episode of Naruto?
-                    </li><li> <input type="checkbox" id="4"> Used chopsticks to eat chips?
-                    </li><li> <input type="checkbox" id="5"> Weren't allowed to date in high school?
-                    </li><li> <input type="checkbox" id="6"> Have a backscratcher at home?
-                    </li><li> <input type="checkbox" id="7"> Parents try to set you up with significant other after college?
-                    </li><li> <input type="checkbox" id="8"> Take off shoes before entering house?
-                    </li><li> <input type="checkbox" id="9"> Owned a jar of little origami stars?
-                    </li><li> <input type="checkbox" id="10"> Have a karaoke machine?
-                    </li><li> <input type="checkbox" id="11"> Have a rice cooker at home?
-                    </li><li> <input type="checkbox" id="12"> Currently have some sort of pickled vegetable in fridge?
-                    </li><li> <input type="checkbox" id="13"> Like Pho?
-                    </li><li> <input type="checkbox" id="14"> Like Ramen?
-                    </li><li> <input type="checkbox" id="15"> Like KBBQ?
-                    </li><li> <input type="checkbox" id="16"> Like Jeremy Lin because he's asian?
-                    </li><li> <input type="checkbox" id="17"> Like Allie Wong, Hasan Minaj, Aziz Anzari?
-                    </li><li> <input type="checkbox" id="18"> Followed Wong Fu Productions, Ryan Higa, or KevJumba?
-                    </li><li> <input type="checkbox" id="19"> Have green tea / red bean snacks at home?
-                    </li><li> <input type="checkbox" id="20"> Parents use tiger balm or <a target="_blank" href="https://www.amazon.com/EAGLE-BRAND-MEDICATED-OIL-24ML/dp/B001HYO65S/ref=as_sl_pc_tf_til?tag=huynt5530e-20&linkCode=w00&linkId=65c77d7a9e185b26cdddf94176510b57&creativeASIN=B001HYO65S">this</a> for every sickness?
-                    </li><li> <input type="checkbox" id="21"> Currently have Hennessy at the house?
-                    </li><li> <input type="checkbox" id="22"> Listens to K-POP?
-                    </li><li> <input type="checkbox" id="23"> Asian glow?
-                    </li><li> <input type="checkbox" id="24"> Parents made you go to native tongue school when younger?
-                    </li><li> <input type="checkbox" id="25"> Boba over starbucks any day of the week?
-                    </li><li> <input type="checkbox" id="26"> Have done a peace sign in a picture?
-                    </li><li> <input type="checkbox" id="27"> Had "AZN" in a username?
-                    </li><li> <input type="checkbox" id="28"> Played League Of Legends?
-                    </li><li> <input type="checkbox" id="29"> Played Maplestory?
-                    </li><li> <input type="checkbox" id="30"> Played PUBG?
-                    </li><li> <input type="checkbox" id="31"> Had a Xanga?
-                    </li><li> <input type="checkbox" id="32"> Lactose Intolerant?
-                    </li><li> <input type="checkbox" id="33"> Ever eaten balut?
-                    </li><li> <input type="checkbox" id="34"> Ever eaten chicken feet?
-                    </li><li> <input type="checkbox" id="35"> Durian doesn't smell bad to you (tastes even better)?
-                    </li><li> <input type="checkbox" id="36"> Must have tea with dim sum?
-                    </li><li> <input type="checkbox" id="37"> Parents insist on getting to airport unnecessarily early?
-                    </li><li> <input type="checkbox" id="38"> Punished with wooden spoon, belt, or sandal?
-                    </li><li> <input type="checkbox" id="39"> Cosplayed?
-                    </li><li> <input type="checkbox" id="40"> Someone in family worn jade jewelry?
-                    </li><li> <input type="checkbox" id="41"> Use dishwasher as drying rack?
-                    </li><li> <input type="checkbox" id="42"> B Letter Grades meant failure?
-                    </li><li> <input type="checkbox" id="43"> Know how to play Mahjong?
-                    </li><li> <input type="checkbox" id="44"> Mother asks many questions before you leave house?
-                    </li><li> <input type="checkbox" id="45"> Save condiments from fast food places?
-                    </li><li> <input type="checkbox" id="46"> Have to greet elders in native tongue when entering house?
-                    </li><li> <input type="checkbox" id="47"> Been to a rave?
-                    </li><li> <input type="checkbox" id="48"> Went to Kumon?
-                    </li><li> <input type="checkbox" id="49"> Applied / Went to a UC school?
-                    </li><li> <input type="checkbox" id="50"> Owned a Honda?
-                    </li><li> <input type="checkbox" id="51"> Owned a Toyota?
-                    </li><li> <input type="checkbox" id="52"> Snuck food out of a buffet?
-                    </li><li> <input type="checkbox" id="53"> Snuck food into a movie theater?
-                    </li><li> <input type="checkbox" id="54"> Ordered food in native language?
-                    </li><li> <input type="checkbox" id="55"> Never had the sex talk with parents?
-                    </li><li> <input type="checkbox" id="56"> Crazy Rich Asians made you emotional?
-                    </li><li> <input type="checkbox" id="57"> Have one of those fuzzy asian blankets?
-                    </li><li> <input type="checkbox" id="58"> Red envelope hype at New Years?
-                    </li><li> <input type="checkbox" id="59"> Played DDR?
-                    </li><li> <input type="checkbox" id="60"> Taken pictures in a photobooth at the mall?
-                    </li><li> <input type="checkbox" id="61"> Parents tell stories from back in their country?
-                    </li><li> <input type="checkbox" id="62"> Parents are slightly racist?
-                    </li><li> <input type="checkbox" id="63"> Parents have over 5 siblings?
-                    </li><li> <input type="checkbox" id="64"> Parents don't let you sleepover?
-                    </li><li> <input type="checkbox" id="65"> Look younger than you actually are?
-                    </li><li> <input type="checkbox" id="66"> Played DOTA?
-                    </li><li> <input type="checkbox" id="67"> Can asian squat?
-                    </li><li> <input type="checkbox" id="68"> Parents cut fruit for you (to show you love)?
-                    </li><li> <input type="checkbox" id="69"> Can speak more than one language?
-                    </li><li> <input type="checkbox" id="70"> Never had an allowance as a kid?
-                    </li><li> <input type="checkbox" id="71"> Had / Have a bowl cut?
-                    </li><li> <input type="checkbox" id="72"> Had / Have a KaKao account?
-                    </li><li> <input type="checkbox" id="73"> Own something from Supreme?
-                    </li><li> <input type="checkbox" id="74"> Had to massage parents before?
-                    </li><li> <input type="checkbox" id="75"> Been asked if you eat dog?
-                    </li><li> <input type="checkbox" id="76"> Actually eaten dog?
-                    </li><li> <input type="checkbox" id="77"> Had your first or last name mispronounced by a teacher?
-                    </li><li> <input type="checkbox" id="78"> Parents insist you only eat seafood at buffets?
-                    </li><li> <input type="checkbox" id="79"> Vaped / Juuled before?
-                    </li><li> <input type="checkbox" id="80"> Will never be good enough in parents eyes?
-                    </li><li> <input type="checkbox" id="81"> Parents seldom show physical affection?
-                    </li><li> <input type="checkbox" id="82"> Parents don't say I love you?
-                    </li><li> <input type="checkbox" id="83"> Parents compare you to better looking, more successful cousin?
-                    </li><li> <input type="checkbox" id="84"> Dated an asian?
-                    </li><li> <input type="checkbox" id="85"> Parents don't approve of significant other?
-                    </li><li> <input type="checkbox" id="86"> Sacrificed hopes and dreams to appease parent's desire for stable career field?
-                    </li><li> <input type="checkbox" id="87"> Dyed your hair before?
-                    </li><li> <input type="checkbox" id="88"> Brought lunch from home and was made fun of when younger?
-                    </li><li> <input type="checkbox" id="89"> Played ping pong or tennis?
-                    </li><li> <input type="checkbox" id="90"> Got scolded for slouching?
-                    </li><li> <input type="checkbox" id="91"> Can handle spicy foods?
-                    </li><li> <input type="checkbox" id="92"> Own a wok at home?
-                    </li><li> <input type="checkbox" id="93"> Were a part of an Asian country Student Association?
-                    </li><li> <input type="checkbox" id="94"> Plastic bags in a cabinet under the sink?
-                    </li><li> <input type="checkbox" id="95"> Parents cook in garage or outside (because of smell)?
-                    </li><li> <input type="checkbox" id="96"> Drank Yakult before it got popular?
-                    </li><li> <input type="checkbox" id="97"> Used a Korean face mask?
-                    </li><li> <input type="checkbox" id="98"> Have a glass table at your house?
-                    </li><li> <input type="checkbox" id="99"> Parents don't let you move out?
-                    </li><li> <input type="checkbox" id="100"> Have to translate things for your parents?
+                    <li> <input type="checkbox" id="1"> Dairy turns your insides into a volcano.
+					</li><li> <input type="checkbox" id="2"> Alcohol makes you glow like a tomato.
+					</li><li> <input type="checkbox" id="3"> Shoes are taken off when entering the house.
+					</li><li> <input type="checkbox" id="4"> There's plastic wrap around your remote.
+					</li><li> <input type="checkbox" id="5"> A rice cooker is as essential as a microwave.
+					</li><li> <input type="checkbox" id="6"> You own a wok at home.
+					</li><li> <input type="checkbox" id="7"> The real party starts when the karaoke machine is on. 
+					</li><li> <input type="checkbox" id="8"> You have a porcilain tea set that you never use.
+					</li><li> <input type="checkbox" id="9"> There's an asian game set (Majong, Chinese Chess, Go, etc…) somewhere in your house.
+					</li><li> <input type="checkbox" id="10"> You drive a Honda, Toyota, Hyundai, or Subaru.
+					</li><li> <input type="checkbox" id="11"> You currently have Hennessy at the house.
+					</li><li> <input type="checkbox" id="12"> Someone in your family owns Jade jewlery.
+					</li><li> <input type="checkbox" id="13"> You flex luxury brands (Gucci, Supreme, MK, Etc…)
+					</li><li> <input type="checkbox" id="14"> You have/had a bowl cut.
+					</li><li> <input type="checkbox" id="15"> Giant fuzzy asian blankets are the only things that kept you warm at night.
+					</li><li> <input type="checkbox" id="16"> You have a glass table at home.
+					</li><li> <input type="checkbox" id="17"> You hoard free stuff from hotels and restaurants.
+					</li><li> <input type="checkbox" id="18"> Plastic bags are stashed in a cabinet somewhere in the kitchen.
+					</li><li> <input type="checkbox" id="19"> The dishwasher is used as a drying rack.
+					</li><li> <input type="checkbox" id="20"> Your parents used <a target="_blank" href="https://www.amazon.com/EAGLE-BRAND-MEDICATED-OIL-24ML/dp/B001HYO65S/ref=as_sl_pc_tf_til?tag=huynt5530e-20&linkCode=w00&linkId=65c77d7a9e185b26cdddf94176510b57&creativeASIN=B001HYO65S">this</a> when ever you were sick, sore, or any other ailment.
+					</li><li> <input type="checkbox" id="21"> You can play an instrument.
+					</li><li> <input type="checkbox" id="22"> You can play a racket sport (Pingpong, Tennis, Badminton, etc…)
+					</li><li> <input type="checkbox" id="23"> You have watched anime.
+					</li><li> <input type="checkbox" id="24"> You know the lyrics to most of the songs in Mulan.
+					</li><li> <input type="checkbox" id="25"> Asking for forks at an asian restaurant are a sign of weakness.
+					</li><li> <input type="checkbox" id="26"> You eat chips with chopsticks.
+					</li><li> <input type="checkbox" id="27"> You can Asian squat.
+					</li><li> <input type="checkbox" id="28"> You have tried a Korean face mask.
+					</li><li> <input type="checkbox" id="29"> You can fold some kind of Origami.
+					</li><li> <input type="checkbox" id="30"> You can do martial arts.
+					</li><li> <input type="checkbox" id="31"> There's some sort of pickled vegetable in the fridge.
+					</li><li> <input type="checkbox" id="32"> Your country's noodle soup is the greatest.
+					</li><li> <input type="checkbox" id="33"> You are powered by Boba.
+					</li><li> <input type="checkbox" id="34"> Animal heads are eaten, not feared.
+					</li><li> <input type="checkbox" id="35"> You have eaten Balut.
+					</li><li> <input type="checkbox" id="36"> Every part of the animal can be eaten (feet, tongue, intestine, etc...)
+					</li><li> <input type="checkbox" id="37"> You can handle spicy foods.
+					</li><li> <input type="checkbox" id="38"> The smell of Durian isn't a warning, it's an invitation.
+					</li><li> <input type="checkbox" id="39"> The best brunch is Dim Sum.
+					</li><li> <input type="checkbox" id="40"> You don't take the last piece of food out of respect.
+					</li><li> <input type="checkbox" id="41"> You can speak more than one language.
+					</li><li> <input type="checkbox" id="42"> You've ordered food in your native language.
+					</li><li> <input type="checkbox" id="43"> Buffets aren't just a meal, its you vs them.
+					</li><li> <input type="checkbox" id="44"> You've snuck food out of a buffet.
+					</li><li> <input type="checkbox" id="45"> You've snuck food into a movie theater because $6 popcorn is robbery.
+					</li><li> <input type="checkbox" id="46"> Meals aren't complete without rice.
+					</li><li> <input type="checkbox" id="47"> Soy sauce and sriracha are as essential as salt and pepper.
+					</li><li> <input type="checkbox" id="48"> You've been asked if you eat dog or cat?
+					</li><li> <input type="checkbox" id="49"> You've actually eaten dog or cat?
+					</li><li> <input type="checkbox" id="50"> You've ever been asked "CaN yOu SpEaK aNy AsIaN?"
+					</li><li> <input type="checkbox" id="51"> You have dyed your hair before.
+					</li><li> <input type="checkbox" id="52"> You dated an asian person.
+					</li><li> <input type="checkbox" id="53"> You've been to a rave.
+					</li><li> <input type="checkbox" id="54"> You've vaped or juuled.
+					</li><li> <input type="checkbox" id="55"> Pho is the best hang over food.
+					</li><li> <input type="checkbox" id="56"> You are a STEM Major (Science, Technology, Engineering, or Math).
+					</li><li> <input type="checkbox" id="57"> You were a part of an "Asian" Student Association in school.
+					</li><li> <input type="checkbox" id="58"> You had an asian social media (WeChat, Viber, KaKao, etc..)
+					</li><li> <input type="checkbox" id="59"> You've done a peace or heart sign in a picture.
+					</li><li> <input type="checkbox" id="60"> "AZN" was ever used in a username.
+					</li><li> <input type="checkbox" id="61"> Pokemon was more than a game, it was a lifestyle.
+					</li><li> <input type="checkbox" id="62"> People think you're younger than you actually are.
+					</li><li> <input type="checkbox" id="63"> Yakult was cool before To All the Boys I Loved Before.
+					</li><li> <input type="checkbox" id="64"> People thought you were related to the other asian kid at school.
+					</li><li> <input type="checkbox" id="65"> Your first or last name was mispronounced by a teacher.
+					</li><li> <input type="checkbox" id="66"> You were made fun of for bringing a "weird" lunch at school.
+					</li><li> <input type="checkbox" id="67"> Red Envelops were for birthdays, holidays, or celebrations.
+					</li><li> <input type="checkbox" id="68"> B Letter Grades bring dishonor to your family.
+					</li><li> <input type="checkbox" id="69"> Crazy Rich Asians made you emotional.
+					</li><li> <input type="checkbox" id="70"> You teach your non-Asian friends how to curse in your native language.
+					</li><li> <input type="checkbox" id="71"> Relatives force food on you, but then call you fat when the meal is over.
+					</li><li> <input type="checkbox" id="72"> You have to greet elders in native tongue when entering house.
+					</li><li> <input type="checkbox" id="73"> Parents cook in garage or outside because of the smell.
+					</li><li> <input type="checkbox" id="74"> Your parents are weirdly superstitious.
+					</li><li> <input type="checkbox" id="75"> You had to go through your parent's interrogation before you left the house.
+					</li><li> <input type="checkbox" id="76"> You get a PTSD flashback whenever you see a wooden spoon, belt, or sandal.
+					</li><li> <input type="checkbox" id="77"> You got scolded for sitting with your legs open.
+					</li><li> <input type="checkbox" id="78"> You got scolded for slouching.
+					</li><li> <input type="checkbox" id="79"> You never had the sex talk with your parents.
+					</li><li> <input type="checkbox" id="80"> Dating in high school was forbidden because you need to focus on your studys.
+					</li><li> <input type="checkbox" id="81"> Dating in college was forbidden because you need to focus on your studies.
+					</li><li> <input type="checkbox" id="82"> Your parents are on your case for being single so long. I WONDER WHY!!
+					</li><li> <input type="checkbox" id="83"> You have to translate things for your parents.
+					</li><li> <input type="checkbox" id="84"> Food, clothes, and shelter was your allowance as a kid.
+					</li><li> <input type="checkbox" id="85"> Your parents slapped fruit at the grocery store.
+					</li><li> <input type="checkbox" id="86"> Your parents have punished you in public.
+					</li><li> <input type="checkbox" id="87"> Your parents won't let you move out.
+					</li><li> <input type="checkbox" id="88"> Your parents will move in with you after you get married.
+					</li><li> <input type="checkbox" id="89"> Tattoos must be hidden from you parents at all costs.
+					</li><li> <input type="checkbox" id="90"> You have over 8 aunts and uncles.
+					</li><li> <input type="checkbox" id="91"> Parents won't let you sleepover anywhere.
+					</li><li> <input type="checkbox" id="92"> Your parents insist on getting to the airport unnecessarily early.
+					</li><li> <input type="checkbox" id="93"> Your parent's love is conditional.
+					</li><li> <input type="checkbox" id="94"> Relatives compare you to your better looking, more successful cousin.
+					</li><li> <input type="checkbox" id="95"> Your parents don't say I love you.
+					</li><li> <input type="checkbox" id="96"> Your parents seldom show physical affection.
+					</li><li> <input type="checkbox" id="97"> You sacrificed hopes and dreams to appease parent's desire for stable career field.
+					</li><li> <input type="checkbox" id="98"> Your parents don't approve of your significant other.
+					</li><li> <input type="checkbox" id="99"> You will never be good enough in your parents' eyes.
+					</li><li> <input type="checkbox" id="100"> Your parents show love by cutting fruit for you.
                 </li></ol>
 
                 <button id="calcBtn" class="pure-button pure-button-primary" data-toggle="modal" data-target="#myModal">Calculate My Score</button>
@@ -385,6 +452,8 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
+        <!-- The actual snackbar -->
+		<div id="snackbar">Copied URL to clipboard!</div>
       </div>
       
     </div>
