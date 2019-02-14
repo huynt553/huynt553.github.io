@@ -216,7 +216,7 @@
 		    }
 		    else if(0 <= count && count <= 10) {
 		    	$('#totalText').html("Your score is " + count + " points! You’re probably not asian but that's ok, we're all inclusive here! Just remember to take off your DAMN SHOES WHEN YOU ENTER THE HOUSE!");
-				$('#imgSection').html("<img id='productImg' width='50%' src='img/" + '1' + ".jpg'>")
+				$('#imgSection').html("<a target='_blank' href='https://www.amazon.com/gp/product/B071RBWCSQ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B071RBWCSQ&linkCode=as2&tag=huynt5530e-20&linkId=a4fad85e3a1e4981ae67deee14cd7b7d'><img id='productImg' width='50%' src='img/" + '1' + ".jpg'></a>")
 		    }
 		});
 	});
@@ -475,23 +475,18 @@
     <div id="amazonAd" style="padding: 10px;">
 		<script type="text/javascript">
 		var categoryID = getRndInteger(1,4);
-		var categoryTitle = '';
-		var categorySearch = '';
-
-		console.log("categoryID: " + categoryID);
+		var productSet = '';
 
 		switch(categoryID) {
 			case 1:
-				categoryTitle = 'My Elo is too low for my self esteem';
-				categorySearch = 'league of legends accessories';
+				// Product Set 1: Boba Straws, Squeeze Toy, Tea Cup, Chef's Knife
+				productSet = 'B014P6FZ2C,B07K75Y6K8,B076H44QFB,B07BK9BBQ5';
 				break;
 			case 2:
-				categoryTitle = 'Supreme';
-				categorySearch = 'supreme accessories';
+				productSet = 'B07JWGJ49W,B075BYW427,B071RBWCSQ,B016Q56XEY';
 				break;
 			case 3:
-				categoryTitle = 'KPOP';
-				categorySearch = 'bts big bang';
+				productSet = 'B07BT6R4CQ,B07DYL3HPQ,B07CHRKCJZ,B018E4MT1Q';
 		}
 
 		function getRndInteger(min, max) {
@@ -501,14 +496,13 @@
 		amzn_assoc_placement = "adunit0";
 		amzn_assoc_search_bar = "false";
 		amzn_assoc_tracking_id = "huynt5530e-20";
-		amzn_assoc_ad_mode = "search";
+		amzn_assoc_ad_mode = "manual";
 		amzn_assoc_ad_type = "smart";
 		amzn_assoc_marketplace = "amazon";
 		amzn_assoc_region = "US";
 		amzn_assoc_title = "";
-		amzn_assoc_default_search_phrase = categorySearch;
-		amzn_assoc_default_category = "All";
-		amzn_assoc_linkid = "7d9ae285c40295d18ee4b372e8bfaffe";
+		amzn_assoc_linkid = "678ea9b23e299be8a28b5936e02f8191";
+		amzn_assoc_asins = productSet;
 		</script>
 		<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 	</div>
