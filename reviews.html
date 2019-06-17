@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134243620-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134243620-1');
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This asian quiz will help determine what type of asian you are. Are you an International student? A first or second generation immigrant? Or are you yellow on the outside, white on the inside? Or not asian at all?">
+    <meta name="keywords" content="asian quiz, asian quizzes, asian exam, how asian are you, asian generation, asian fun">
+    <meta name="robots" content="index,follow">
+	<meta property="og:title" content="The ExaminAsian">
+	<meta property="og:image" content="http://www.theexaminasian.com/img/examPerson.jpg">
+	<meta name="og:description" content="You've taken the SAT, ACT, and GRE. Now for a test you've been preparing for your whole life.">
+    <title>The ExaminAsian - Asian Quiz</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Designed by Flaticon -->
+    <link rel=icon href=img/favicon.png>
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/marketing.css">
+        <!--<![endif]-->
+<style>
+	/* The snackbar - position it at the bottom and in the middle of the screen */
+	#snackbar {
+	  visibility: hidden; /* Hidden by default. Visible on click */
+	  min-width: 250px; /* Set a default minimum width */
+	  margin-left: -125px; /* Divide value of min-width by 2 */
+	  background-color: #333; /* Black background color */
+	  color: #fff; /* White text color */
+	  text-align: center; /* Centered text */
+	  border-radius: 2px; /* Rounded borders */
+	  padding: 16px; /* Padding */
+	  position: fixed; /* Sit on top of the screen */
+	  z-index: 1; /* Add a z-index if needed */
+	  left: 50%; /* Center the snackbar */
+	  bottom: 30px; /* 30px from the bottom */
+	}
+
+	/* Show the snackbar when clicking on a button (class added with JavaScript) */
+	#snackbar.show {
+	  visibility: visible; /* Show the snackbar */
+	  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+	  However, delay the fade out process for 2.5 seconds */
+	  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	}
+
+	/* Animations to fade the snackbar in and out */
+	@-webkit-keyframes fadein {
+	  from {bottom: 0; opacity: 0;} 
+	  to {bottom: 30px; opacity: 1;}
+	}
+
+	@keyframes fadein {
+	  from {bottom: 0; opacity: 0;}
+	  to {bottom: 30px; opacity: 1;}
+	}
+
+	@-webkit-keyframes fadeout {
+	  from {bottom: 30px; opacity: 1;} 
+	  to {bottom: 0; opacity: 0;}
+	}
+
+	@keyframes fadeout {
+	  from {bottom: 30px; opacity: 1;}
+	  to {bottom: 0; opacity: 0;}
+	}
+
+	#productImg { 
+	  border: 10px solid white; 
+	  border-radius: 10px;
+	} 
+	#productImg:hover { 
+	  border: 10px solid #1f8dd6; 
+	  border-radius: 10px;
+	  cursor: pointer;
+	} 
+
+	.tosStuff {
+		float: right;
+		padding: 10px;
+	}
+</style>
+
+<style>
+	#list {
+		letter-spacing: normal;
+	}
+
+	.modal-body {
+    	text-align: center;
+	}
+
+	input[type=checkbox] {width:20px; height:20px;}
+
+	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	  max-width: 300px;
+	  margin: auto;
+	  text-align: center;
+	  font-family: arial;
+	  margin-top: 60px;
+	}
+
+	.price {
+	  color: grey;
+	  font-size: 22px;
+	}
+
+	.card button {
+	  border: none;
+	  outline: 0;
+	  padding: 12px;
+	  color: white;
+	  background-color: #000;
+	  text-align: center;
+	  cursor: pointer;
+	  width: 100%;
+	  font-size: 18px;
+	}
+
+	.card button:hover {
+	  opacity: 0.7;
+	}
+</style>
+
+</head>
+<body>
+
+
+
+
+
+
+
+<!--- <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Your Site</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>
+        </ul>
+    </div>
+</div> --->
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head lowerCase">The ExaminAsian</h1>
+        <p class="splash-subhead">
+            See how much honor (or dishonor) you bring to your family!
+        </p>
+        <!--- <p>
+            <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
+        </p> --->
+    </div>
+</div>
+
+<div class="content-wrapper">
+	<div class="card">
+		<a href="https://www.amazon.com/FUN-CHOP-Chopstick-Helper-FunChop/dp/B00FFHL20U/ref=as_li_ss_il?keywords=chopstick+trainer&qid=1560749358&s=gateway&sr=8-3&linkCode=li2&tag=huynt553-20&linkId=f02bf06f53548aa1447914682ec01a60&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00FFHL20U&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=huynt553-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=huynt553-20&language=en_US&l=li2&o=1&a=B00FFHL20U" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+	  <h1>20 Sets FUN CHOP Chopstick Helper FunChop GREAT GIFT</h1>
+	  <p>Since 1766 BCE around the time of the Xia Dynasty, chopsticks have been a stable utensil for asian race. Not everyone has mastered the art of the these simple looking sticks however. But NOW YOU CAN! Check out these awesome chopstick trainers which will make you a master of the chopstick! Easy to clip on to any chopstick! Perfect gift for your white friends that want to appreciate your asian culture more. No more stabbing with the pointy part!</p>
+	</div>
+</div>
+
+</body>
+</html>
